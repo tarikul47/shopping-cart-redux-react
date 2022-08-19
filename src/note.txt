@@ -1,0 +1,77 @@
+1. Features lists 
+	- Products
+	- cart
+
+2. Products 
+    Initial State = [] = 3 default data
+        - [
+            {
+                id: string / number 
+                title: string,
+                stock: number,
+                price: number
+            } 
+        ]
+
+    actionTypes = INCREMENT
+
+    actions = 
+    const increment(productId) = type: INCREMENT, payload: productId
+
+    update State = Carts 
+        - specific product id cart with quantity 1 
+
+
+
+3. Carts
+    Initial State = [] = 3 default items 
+    - [
+        {
+            id: string / number 
+            title: string,
+            quantity: number
+            price: number
+            totalItem: number
+        }
+    ]
+
+     actionTypes = INCREMENT & DECREMENT 
+
+  actions = 
+    const increment(productId) = type: INCREMENT, payload: productId
+
+
+4. Total 
+    Initial State = []
+    - {
+        totalItem: number,
+        totalCartPrice: number 
+    }
+
+
+5. Project starting for redux
+---------------------------------
+
+    - npm install redux react-redux 
+    - folder create redux 
+    - features create = products
+            - actionTypes = ADD_TO_CART
+            - actions.js = addToCart() 
+                    - parameter = type, productId
+            - productsReducer.js    
+                    - switch case 
+                    - actions =  ADD_TO_CART = stock decreasing system 
+
+    - App.js = Provider import from redux 
+            - Store import 
+            - Need to create store  
+            - Need to create combine reducer 
+
+    - Then need to show product state data = done 
+            - Then ADD_TO_CART action functionality check =  make sure stock less
+            - need to validation product quantity not possible less than 1 or more than 20
+                - Middelware functionality need to check 
+                -  show error message depend on product quantity
+
+    
+6. cart starting redux 
